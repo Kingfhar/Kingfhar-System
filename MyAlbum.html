@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Photo Album</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      background-image: url('relaxing-rainbow.gif');
+        background-repeat: no-repeat;
+            background-size: cover;
+    }
+    .slideshow-container {
+      max-width: 800px;
+      position: relative;
+      margin: auto;
+    }
+    .slides {
+      display: none;
+    }
+    img {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 50%;
+      background-color: rgba(0,0,0,0.5);
+      user-select: none;
+    }
+    .next {
+      right: 0;
+    }
+    .prev {
+      left: 0;
+    }
+    .dots-container {
+      margin-top: 20px;
+    }
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    .active {
+      background-color: #717171;
+    }
+      .btn {
+            font-size: 20px;
+            font-weight: bold;
+            display: block;
+            text-decoration: none;
+            color: black;
+            background-color: white;
+            padding: 12px;
+            width: 200px;
+            margin: 30px auto;
+            border-radius: 8px;
+            border:2px solid white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color:black;
+            color: white;
+        }
+        
+  </style>
+</head>
+<body>
+  <h1>My Album</h1>
+  <div class="slideshow-container">
+    <p>DJVP Traing</p>
+    <div class="slides">
+     <div class="numbertext">1/6</div>
+    <img src="DJVP-DAY.jpg" alt="Boracay White Beach" height="300px"width="300px"></div>
+    <p>Elementary Student😖</p>
+    <div class="slides">
+       <div class="numbertext">2/6</div>
+      <img src="ElementaryDays.png" alt="Mayon Volcano" height="300px"width="300px"></div>
+    <p>Random Pic😪</p>
+    <div class="slides">
+ <div class="numbertext">3/6</div>
+      <img src="HighSchool.jpg" alt="Chocolate Hills" height="300px"width="300px"></div>
+    <p>Tambulig Resort</p>
+    <div class="slides">
+ <div class="numbertext">4/6</div>
+      <img src="TambuligTrip.jpg" alt="Banaue Rice Terraces" height="300px"width="300px"></div>
+    <p>Picture with Friends  </p>
+    <div class="slides">
+ <div class="numbertext">5/6</div>
+      <img src="TambuligResort.jpg" alt="Siargao Cloud 9" height="300px"width="300px"></div>
+    <p>Celebrating Our NC2 passers</p>
+    <div class="slides">
+ <div class="numbertext">6/6</div>
+      <img src="CelebratingNC2holder.jpeg" alt="Vigan Calle Crisologo" height="300px"width="300px"></div>
+    <h1>My Picture Album Elementary to SeniorHigh student</h1>
+
+
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+  </div>
+  <div class="dots-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+  </div>
+   <button class="btn" onclick="window.location.href='Mylife.html'">Go Back</button>
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function changeSlide(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let slides = document.getElementsByClassName("slides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) slideIndex = 1;
+      if (n < 1) slideIndex = slides.length;
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+  </script>
+</body>
+</html>
+
